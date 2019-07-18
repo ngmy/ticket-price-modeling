@@ -177,6 +177,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /*
+         * My Domain Service Providers...
+         */
+        Ngmy\TicketPrice\TicketPriceServiceProvider::class,
+
     ],
 
     /*
