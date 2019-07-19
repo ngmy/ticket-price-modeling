@@ -9,7 +9,7 @@
 
 ## ドメインモデル
 
-![sequence dialog](http://www.plantuml.com/plantuml/proxy?src=https://gist.githubusercontent.com/ngmy/ea2957b7146d523a813a563fab578f90/raw)
+![model dialog](http://www.plantuml.com/plantuml/proxy?src=https://gist.githubusercontent.com/ngmy/ea2957b7146d523a813a563fab578f90/raw)
 
 ## 動作確認
 
