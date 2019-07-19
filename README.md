@@ -1,8 +1,15 @@
+
 # ticket-price-modeling
 
 ## お題
 
+[https://cinemacity.co.jp/ticket/](https://cinemacity.co.jp/ticket/)
+
 [#チケット料金モデリング](https://twitter.com/search?q=%23%E3%83%81%E3%82%B1%E3%83%83%E3%83%88%E6%96%99%E9%87%91%E3%83%A2%E3%83%87%E3%83%AA%E3%83%B3%E3%82%B0&src=typed_query&f=live)
+
+## ドメインモデル
+
+![sequence dialog](http://www.plantuml.com/plantuml/proxy?src=https://gist.githubusercontent.com/ngmy/ea2957b7146d523a813a563fab578f90/raw)
 
 ## 動作確認
 

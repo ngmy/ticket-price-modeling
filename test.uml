@@ -1,0 +1,69 @@
+```uml
+@startuml
+hide circle
+
+class "チケット" as Ticket {
+    {field} チケットID
+    {field} チケット名
+    {field} 備考
+    {method} 適用可能なチケット料金の取得(チケット料金仕様)
+    {method} 適用可能な最安値のチケット料金の取得(チケット料金仕様)
+}
+
+class "チケット料金" as TicketPrice {
+    {field} 金額
+}
+
+class "チケット料金タイプ" as TicketPriceType {
+}
+
+class "チケット料金日タイプ" as TicketPriceDayType {
+    {method} 平日料金かどうか
+    {method} 土日祝料金かどうか
+    {method} 映画の日料金かどうか
+}
+
+class "チケット料金時間タイプ" as TicketPriceTimeType {
+    {method} 通常時間料金かどうか
+    {method} レイト時間料金かどうか
+}
+
+class "チケット料金仕様" as TicketPriceSpecification {
+    {field} 3D作品かどうか
+    {field} 3Dメガネ持参かどうか
+    {field} 極上爆音上映かどうか
+    {method} 仕様が満たされるかどうか(チケット料金)
+    {method} 仕様の適用(チケット料金)
+}
+
+class "上映開始日時" as MovieStartDateTime {
+    {method} 平日かどうか
+    {method} 土日祝かどうか
+    {method} 映画の日かどうか
+    {method} 通常時間かどうか
+    {method} レイト時間かどうか
+}
+
+class "チケットリポジトリ" as TicketRepository {
+    {method} 全てのチケットの取得
+}
+
+class "チケット料金サービス" as TicketPriceService {
+    {method} チケットIDおよび上映開始日時等によるチケット料金の金額の取得
+}
+
+Ticket o-- "*" TicketPrice
+TicketPrice o-- TicketPriceType
+TicketPriceType o-- TicketPriceDayType
+TicketPriceType o-- TicketPriceTimeType
+TicketPrice <-r-- TicketPriceSpecification : "チケット料金は仕様を満たしていなければならない"
+TicketPriceSpecification o-u-- MovieStartDateTime
+TicketPriceSpecification ..> TicketPriceType : "要求する"
+TicketRepository --> "*" Ticket
+TicketPriceService ---> "1" TicketPrice
+TicketPriceService o-r-- TicketRepository
+TicketPriceService --->  TicketPriceSpecification
+
+note bottom of TicketPriceSpecification : <i>仕様の適用(チケット料金)</i>メソッドは、与えられたチケット料金と\n「3D作品かどうか」「3Dメガネ持参かどうか」「極上爆音上映どうか」\nという条件から、新しいチケット料金を生成する。
+@enduml
+```
