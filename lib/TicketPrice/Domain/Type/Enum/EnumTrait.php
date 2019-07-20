@@ -27,7 +27,7 @@ trait EnumTrait
     {
         if (!self::isValidName($name)) {
             throw new BadMethodCallException('不正な名前です: ' .
-                var_export([self::ENUM, $name, $args], true));
+                var_export([self::ENUM, $name], true));
         }
 
         return new self(self::ENUM[$name]);
@@ -37,7 +37,7 @@ trait EnumTrait
     {
         if (!self::isValidValue($value)) {
             throw new InvalidArgumentException('不正な値です: ' .
-                var_export([self::ENUM, $this, $value], true));
+                var_export([self::ENUM, $value], true));
         }
 
         $this->scalar = $value;
@@ -56,6 +56,6 @@ trait EnumTrait
     final public function __set(string $name, $value): void
     {
         throw new BadMethodCallException('全てのセッターは禁止されています: ' .
-            var_export([self::ENUM, $this, $name, $value], true));
+            var_export([$name, $value], true));
     }
 }
