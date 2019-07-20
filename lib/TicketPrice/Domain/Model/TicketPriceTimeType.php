@@ -14,12 +14,12 @@ class TicketPriceTimeType
         'late'    => 20,
     ];
 
-    public function isNormal(): bool
+    public function isNormalTimePrice(): bool
     {
         return $this->value() == self::ENUM['normal'];
     }
 
-    public function isLate(): bool
+    public function isLateTimePrice(): bool
     {
         return $this->value() == self::ENUM['late'];
     }

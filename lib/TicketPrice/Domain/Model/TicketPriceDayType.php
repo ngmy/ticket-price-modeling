@@ -15,17 +15,17 @@ class TicketPriceDayType
         'movieDay' => 30,
     ];
 
-    public function isWeekday(): bool
+    public function isWeekdayPrice(): bool
     {
         return $this->value() == self::ENUM['weekday'];
     }
 
-    public function isHoliday(): bool
+    public function isHolidayPrice(): bool
     {
         return $this->value() == self::ENUM['holiday'];
     }
 
-    public function isMovieDay(): bool
+    public function isMovieDayPrice(): bool
     {
         return $this->value() == self::ENUM['movieDay'];
     }

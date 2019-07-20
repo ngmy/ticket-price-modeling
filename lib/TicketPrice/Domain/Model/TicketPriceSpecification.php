@@ -47,29 +47,29 @@ class TicketPriceSpecification
     {
         return !is_null($price->amount()) && (
             (
-                $price->type()->dayType()->isMovieDay() && $price->type()->timeType()->isLate() &&
+                $price->type()->dayType()->isMovieDayPrice() && $price->type()->timeType()->isLateTimePrice() &&
                 $this->movieStartDateTime->isMovieDay() && $this->movieStartDateTime->isLateTime()
             ) ||
             (
-                $price->type()->dayType()->isMovieDay() && $price->type()->timeType()->isNormal() &&
+                $price->type()->dayType()->isMovieDayPrice() && $price->type()->timeType()->isNormalTimePrice() &&
                 $this->movieStartDateTime->isMovieDay()
             ) ||
             (
                 !$this->isGokubakuScreening &&
-                $price->type()->dayType()->isHoliday() && $price->type()->timeType()->isLate() &&
+                $price->type()->dayType()->isHolidayPrice() && $price->type()->timeType()->isLateTimePrice() &&
                 $this->movieStartDateTime->isHoliday() && $this->movieStartDateTime->isLateTime()
             ) ||
             (
-                $price->type()->dayType()->isHoliday() && $price->type()->timeType()->isNormal() &&
+                $price->type()->dayType()->isHolidayPrice() && $price->type()->timeType()->isNormalTimePrice() &&
                 $this->movieStartDateTime->isHoliday()
             ) ||
             (
                 !$this->isGokubakuScreening &&
-                $price->type()->dayType()->isWeekday() && $price->type()->timeType()->isLate() &&
+                $price->type()->dayType()->isWeekdayPrice() && $price->type()->timeType()->isLateTimePrice() &&
                 $this->movieStartDateTime->isWeekday() && $this->movieStartDateTime->isLateTime()
             ) ||
             (
-                $price->type()->dayType()->isWeekday() && $price->type()->timeType()->isNormal() &&
+                $price->type()->dayType()->isWeekdayPrice() && $price->type()->timeType()->isNormalTimePrice() &&
                 $this->movieStartDateTime->isWeekday()
             )
         );
