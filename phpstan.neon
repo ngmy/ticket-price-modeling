@@ -1,0 +1,7 @@
+parameters:
+  level: max
+  paths:
+    - lib
+  reportUnmatchedIgnoredErrors: false
+
+# vim: set ft=yaml:

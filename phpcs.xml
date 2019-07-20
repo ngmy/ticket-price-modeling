@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<ruleset name="TicketPriceModeling Coding Standards">
+  <description>The coding standard for TicketPriceModeling.</description>
+
+  <file>lib</file>
+
+  <arg name="basepath" value="."/>
+  <arg name="extensions" value="php"/>
+  <arg name="report" value="full"/>
+  <arg name="colors"/>
+  <arg name="parallel" value="75"/>
+  <arg value="p"/>
+
+  <rule ref="PSR12"/>
+</ruleset>
