@@ -18,7 +18,7 @@ $ php artisan tinker
 Psy Shell v0.9.9 (PHP 7.2.12 — cli) by Justin Hileman
 >>> $service = app(Ngmy\TicketPrice\App\TicketPriceService::class);
 => Ngmy\TicketPrice\App\TicketPriceService {#2880}
->>> $command = new Ngmy\TicketPrice\App\GetTicketPriceByCommand(3, "2019-07-18 20:00:00");
+>>> $command = new Ngmy\TicketPrice\App\GetTicketPriceByCommand(3, '2019-07-18 20:00:00');
 => Ngmy\TicketPrice\App\GetTicketPriceByCommand {#2885}
 >>> $service->getTicketPriceBy($command);
 => 1300
