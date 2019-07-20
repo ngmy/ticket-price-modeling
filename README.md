@@ -40,5 +40,5 @@ Psy Shell v0.9.9 (PHP 7.2.12 — cli) by Justin Hileman
 ## テスト
 
 ```
-$ php vendor/bin/phpunit
+$ composer test
 ```
