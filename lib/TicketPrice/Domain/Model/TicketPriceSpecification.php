@@ -9,7 +9,7 @@ class TicketPriceSpecification
 {
     private const THREE_DIMENSIONAL_MOVIE_PRICE = 400;
 
-    private const HAS_THREE_THREE_DIMENSIONAL_GLASSES_DISCOUNT = 100;
+    private const THREE_THREE_DIMENSIONAL_GLASSES_HOLDER_DISCOUNT = 100;
 
     /**
      * @var MovieStartDateTime
@@ -81,7 +81,7 @@ class TicketPriceSpecification
             $threeDimensionalPrice = Money::of(self::THREE_DIMENSIONAL_MOVIE_PRICE);
             if ($this->hasThreeDimensionalGlasses) {
                 $threeDimensionalPrice = $threeDimensionalPrice->minus(
-                    Money::of(self::HAS_THREE_THREE_DIMENSIONAL_GLASSES_DISCOUNT)
+                    Money::of(self::THREE_THREE_DIMENSIONAL_GLASSES_HOLDER_DISCOUNT)
                 );
             }
             $price = $price->add($threeDimensionalPrice);
