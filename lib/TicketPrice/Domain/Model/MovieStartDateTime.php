@@ -51,5 +51,4 @@ class MovieStartDateTime
     {
         $this->value = $value;
     }
-
 }
