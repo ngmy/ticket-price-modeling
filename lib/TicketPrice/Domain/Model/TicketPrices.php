@@ -38,11 +38,13 @@ class TicketPrices
         $result = null;
         $resultAmount = Money::of(PHP_INT_MAX);
         foreach ($this->getApplicablePrices($spec)->prices as $price) {
+            assert(!is_null($price->amount()));
             if ($price->amount()->isLess($resultAmount)) {
                 $result = $price;
                 $resultAmount = $price->amount();
             }
         }
+        assert(!is_null($result));
         return $result;
     }
 

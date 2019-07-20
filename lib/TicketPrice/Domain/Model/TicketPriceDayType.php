@@ -5,6 +5,11 @@ namespace Ngmy\TicketPrice\Domain\Model;
 
 use Ngmy\TicketPrice\Domain\Type\Enum\EnumTrait;
 
+/**
+ * @method static self weekday()
+ * @method static self holiday()
+ * @method static self movieDay()
+ */
 class TicketPriceDayType
 {
     use EnumTrait;

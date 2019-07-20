@@ -31,6 +31,7 @@ class TicketPriceService
         );
         $price = $tickets->getApplicableLowestPriceOf($command->getTicketId(), $spec);
 
+        assert(!is_null($price->amount()));
         return $price->amount()->asInt();
     }
 }

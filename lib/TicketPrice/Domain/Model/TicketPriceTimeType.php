@@ -5,6 +5,10 @@ namespace Ngmy\TicketPrice\Domain\Model;
 
 use Ngmy\TicketPrice\Domain\Type\Enum\EnumTrait;
 
+/**
+ * @method static self normal()
+ * @method static self late()
+ */
 class TicketPriceTimeType
 {
     use EnumTrait;

@@ -30,14 +30,14 @@ class Money
         return new Money($this->value * $times);
     }
 
-    public function isLess(Money $ohter): bool
+    public function isLess(Money $other): bool
     {
-        return $this->value < $ohter->value;
+        return $this->value < $other->value;
     }
 
     public function isGreater(Money $other): bool
     {
-        return $this->value > $ohter->value;
+        return $this->value > $other->value;
     }
 
     public function asInt(): int

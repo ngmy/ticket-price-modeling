@@ -34,6 +34,7 @@ class CsvTicketRepository implements TicketRepositoryInterface
         $data = [];
 
         $handle = fopen(self::FILE, 'r');
+        assert($handle !== false);
         while ($rows = fgetcsv($handle)) {
             $data[] = $rows;
         }
