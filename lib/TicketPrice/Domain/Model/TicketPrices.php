@@ -24,7 +24,7 @@ class TicketPrices
 
     public function getApplicablePrices(TicketPriceSpecification $spec): TicketPrices
     {
-        return new self(array_reduce($this->prices, function (array $carry, TicketPrice $price) use ($spec) {
+        return new self(array_reduce($this->prices, function (array $carry, TicketPrice $price) use ($spec): array {
             if (!$spec->isSatisfiedBy($price)) {
                 return $carry;
             };

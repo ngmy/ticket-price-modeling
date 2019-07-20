@@ -17,14 +17,9 @@ class MovieStartDateTime
         return new self($value);
     }
 
-    public static function ofByString(string $value)
+    public static function ofByString(string $value): self
     {
         return new self(DateTime::ofByString($value));
-    }
-
-    private function __construct(DateTime $value)
-    {
-        $this->value = $value;
     }
 
     public function isWeekday(): bool
@@ -51,4 +46,10 @@ class MovieStartDateTime
     {
         return $this->value->isAfter(DateTime::of($this->value->value()->setTime(19, 59, 59)));
     }
+
+    private function __construct(DateTime $value)
+    {
+        $this->value = $value;
+    }
+
 }

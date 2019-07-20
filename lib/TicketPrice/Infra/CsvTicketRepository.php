@@ -19,7 +19,7 @@ class CsvTicketRepository implements TicketRepositoryInterface
 
     public function all(): Tickets
     {
-        return Tickets::of(array_map(function (array $rows) {
+        return Tickets::of(array_map(function (array $rows): Ticket {
             return Ticket::of(
                 intval($rows[0]),
                 $rows[1],
@@ -42,8 +42,13 @@ class CsvTicketRepository implements TicketRepositoryInterface
         return $data;
     }
 
-    private function makeTicketPrices($amount1, $amount2, $amount3, $amount4, $amount5): TicketPrices
-    {
+    private function makeTicketPrices(
+        string $amount1,
+        string $amount2,
+        string $amount3,
+        string $amount4,
+        string $amount5
+    ): TicketPrices {
         return TicketPrices::of([
             TicketPrice::of(empty($amount1) ? null : Money::of(intval($amount1)), TicketPriceType::of(
                 TicketPriceDayType::weekday(),
