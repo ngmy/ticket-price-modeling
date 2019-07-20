@@ -6,25 +6,25 @@ namespace Ngmy\TicketPrice\Domain\Model;
 use Ngmy\TicketPrice\Domain\Type\Enum\EnumTrait;
 
 /**
- * @method static self normal()
- * @method static self late()
+ * @method static self normalTimePrice()
+ * @method static self lateTimePrice()
  */
 class TicketPriceTimeType
 {
     use EnumTrait;
 
     private const ENUM = [
-        'normal'  => 10,
-        'late'    => 20,
+        'normalTimePrice'  => 10,
+        'lateTimePrice'    => 20,
     ];
 
     public function isNormalTimePrice(): bool
     {
-        return $this->value() == self::ENUM['normal'];
+        return $this->value() == self::ENUM['normalTimePrice'];
     }
 
     public function isLateTimePrice(): bool
     {
-        return $this->value() == self::ENUM['late'];
+        return $this->value() == self::ENUM['lateTimePrice'];
     }
 }

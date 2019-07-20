@@ -52,28 +52,28 @@ class CsvTicketRepository implements TicketRepositoryInterface
     ): TicketPrices {
         return TicketPrices::of([
             TicketPrice::of(empty($amount1) ? null : Money::of(intval($amount1)), TicketPriceType::of(
-                TicketPriceDayType::weekday(),
-                TicketPriceTimeType::normal()
+                TicketPriceDayType::weekdayPrice(),
+                TicketPriceTimeType::normalTimePrice()
             )),
             TicketPrice::of(empty($amount2) ? null : Money::of(intval($amount2)), TicketPriceType::of(
-                TicketPriceDayType::weekday(),
-                TicketPriceTimeType::late()
+                TicketPriceDayType::weekdayPrice(),
+                TicketPriceTimeType::lateTimePrice()
             )),
             TicketPrice::of(empty($amount3) ? null : Money::of(intval($amount3)), TicketPriceType::of(
-                TicketPriceDayType::holiday(),
-                TicketPriceTimeType::normal()
+                TicketPriceDayType::holidayPrice(),
+                TicketPriceTimeType::normalTimePrice()
             )),
             TicketPrice::of(empty($amount4) ? null : Money::of(intval($amount4)), TicketPriceType::of(
-                TicketPriceDayType::holiday(),
-                TicketPriceTimeType::late()
+                TicketPriceDayType::holidayPrice(),
+                TicketPriceTimeType::lateTimePrice()
             )),
             TicketPrice::of(empty($amount5) ? null : Money::of(intval($amount5)), TicketPriceType::of(
-                TicketPriceDayType::movieDay(),
-                TicketPriceTimeType::normal()
+                TicketPriceDayType::movieDayPrice(),
+                TicketPriceTimeType::normalTimePrice()
             )),
             TicketPrice::of(empty($amount5) ? null : Money::of(intval($amount5)), TicketPriceType::of(
-                TicketPriceDayType::movieDay(),
-                TicketPriceTimeType::late()
+                TicketPriceDayType::movieDayPrice(),
+                TicketPriceTimeType::lateTimePrice()
             )),
         ]);
     }
